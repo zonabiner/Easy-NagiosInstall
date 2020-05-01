@@ -9,10 +9,10 @@
               |___/                                        |_|    
 ```
 
-Instalation Nagios With Nagioscore Latest Release Version 4.4.6 and nagios-plugins 2.3.3
-You Can Check in : 
-https://github.com/NagiosEnterprises/nagioscore/releases
-https://github.com/nagios-plugins/nagios-plugins/releases
+Instalation Nagios With Nagioscore Latest Release Version 4.4.6 and nagios-plugins 2.3.3 <br>
+You Can Check in : <br>
+ - https://github.com/NagiosEnterprises/nagioscore/releases 
+ - https://github.com/nagios-plugins/nagios-plugins/releases
 
 
 Require :
@@ -49,8 +49,8 @@ Debian 10 (Buster)	     |:heavy_check_mark:
 
 Official Repo 
 -------------
-https://github.com/NagiosEnterprises/nagioscore/
-https://github.com/nagios-plugins/nagios-plugins
+- [nagioscore](https://github.com/NagiosEnterprises/nagioscore/)
+- [nagios-plugins](https://github.com/nagios-plugins/nagios-plugins)
 
 More About Installation Nagios
 ------------------------------
