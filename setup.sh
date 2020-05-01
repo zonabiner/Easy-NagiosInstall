@@ -3,16 +3,17 @@
 
 # Nagios 4 Instalation Setup
 
+
 # Updating Repository
-echo "Updating Repository"
+echo -e "\e[32mUpdating Repository\e[39m"
 apt update
 # Instalation Dependencies
-echo "Installing Dependencies"
+echo -e "\e[32mInstalling Dependencies\e[39m"
 apt install -y apache2 figlet apache2-utils php build-essential autoconf gcc libc6 make wget unzip make libssl-dev wget bc gawk dc snmp libnet-snmp-perl gettext
-echo "Creating Nagios User and Group"
+echo -e "\e[32mCreating Nagios User and Group\e[39m"
 useradd nagios && groupadd nagcmd
 usermod -a -G nagcmd nagios && usermod -a -G nagcmd www-data
-echo "Begin Install and Build Nagios"
+echo -e "\e[32mBegin Install and Build Nagios\e[39m"
 mkdir /opt/nagios
 cp nagioscore.tar.gz /opt/nagios
 cp nagios-plugins.tar.gz /opt/nagios
@@ -27,7 +28,7 @@ make install-commandmode
 make install-config
 make install-webconf
 a2enmod rewrite && a2enmod cgi
-echo "Create Nagios Admin Password"
+echo -e "\e[32mCreate Nagios Admin Password\e[39m"
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 systemctl restart apache2.service
 cd ..
@@ -42,5 +43,5 @@ systemctl enable nagios
 systemctl reload nagios
 systemctl start nagios
 figlet "Installation Completed !"
-echo "you can access the nagios web interface by accessing http://ip-address/nagios"
-echo "Login with username=nagiosadmin and passwor=[you made before]"
+echo "\e[32mYou can access the nagios web interface by accessing http://ip-address/nagios"
+echo "Login with username=nagiosadmin and passwor=[you made before]\e[39m"
