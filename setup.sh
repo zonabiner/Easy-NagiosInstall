@@ -1,11 +1,18 @@
-#ehehehe
+# Created by : Akhid Yanuar A.F
+# Github : github.com/yanuarakhid
 
-# Installing Dependecies
+# Nagios 4 Instalation Setup
+
+# Updating Repository
+echo "Updating Repository"
+apt update
+# Instalation Dependencies
+echo "Installing Dependencies"
 apt install -y apache2 figlet apache2-utils php build-essential autoconf gcc libc6 make wget unzip make libssl-dev wget bc gawk dc snmp libnet-snmp-perl gettext
-echo "Creating Nagios User and Group\n"
+echo "Creating Nagios User and Group"
 useradd nagios && groupadd nagcmd
 usermod -a -G nagcmd nagios && usermod -a -G nagcmd www-data
-echo "Begin Install and Build Nagios\n"
+echo "Begin Install and Build Nagios"
 mkdir /opt/nagios
 cp nagioscore.tar.gz /opt/nagios
 cp nagios-plugins.tar.gz /opt/nagios
@@ -35,5 +42,5 @@ systemctl enable nagios
 systemctl reload nagios
 systemctl start nagios
 figlet "Installation Completed !"
-echo "you can access the nagios web interface by accessing http://ip-address/nagios \n"
-echo "Login with username=nagiosadmin and passwor=[you made before]\n"
+echo "you can access the nagios web interface by accessing http://ip-address/nagios"
+echo "Login with username=nagiosadmin and passwor=[you made before]"
