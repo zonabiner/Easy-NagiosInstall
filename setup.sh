@@ -1,3 +1,4 @@
+#!/bin/bash
 # Created by : Akhid Yanuar A.F
 # Github : github.com/yanuarakhid
 
