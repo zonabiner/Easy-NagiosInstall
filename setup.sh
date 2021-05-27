@@ -29,10 +29,9 @@ echo -e "\e[32mCreating Nagios User and Group\e[39m"
 useradd nagios && groupadd nagcmd
 usermod -a -G nagcmd nagios && usermod -a -G nagcmd www-data
 echo -e "\e[32mBegin Install and Build Nagios\e[39m"
-mkdir /opt/nagios
-cp nagioscore.tar.gz /opt/nagios
-cp nagios-plugins.tar.gz /opt/nagios
-cd /opt/nagios
+cp nagioscore.tar.gz /tmp
+cp nagios-plugins.tar.gz /tmp
+cd /tmp
 tar xzf nagioscore.tar.gz
 cd nagioscore-nagios-4.4.6/
 ./configure --with-nagios-group=nagios --with-command-group=nagcmd --with-httpd_conf=/etc/apache2/sites-enabled/
@@ -45,7 +44,6 @@ make install-webconf
 a2enmod rewrite && a2enmod cgi
 echo -e "\e[32mCreate Nagios Admin Password\e[39m"
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-systemctl restart apache2.service
 cd ..
 tar zxf nagios-plugins.tar.gz
 cd nagios-plugins-release-2.3.3/
@@ -55,8 +53,9 @@ make
 make install
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 systemctl enable nagios
-systemctl reload nagios
 systemctl start nagios
+systemctl restart apache2
+cd ~
 figlet "Installation Completed !"
-echo "\e[32mYou can access the nagios web interface by accessing http://ip-address/nagios"
-echo "Login with username=nagiosadmin and passwor=[you made before]\e[39m"
+echo -e "\e[32mYou can access the nagios web interface by accessing http://ip-address/nagios"
+echo -e "Login with username=nagiosadmin and password=[you made before]\e[39m"
