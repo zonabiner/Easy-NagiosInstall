@@ -23,12 +23,11 @@ Require :
 How to : 
 --------
 ```
-git clone https://github.com/yanuarakhid/Easy-NagiosInstall.git
+git clone https://github.com/zonabiner/Easy-NagiosInstall.git
 ```
 ```
-cd nagios-setup
+cd Easy-NagiosInstall
 ```
-
 ```
 chmod +x setup.sh
 ```
@@ -44,9 +43,10 @@ Tested In:
 
 OS | Tested
 ------------ | -------------
-Ubuntu 18.04 LTS         |:heavy_check_mark:
-Debian 9 (Stretch)       |:heavy_check_mark:
-Debian 10 (Buster)	     |:heavy_check_mark:
+Ubuntu 18.04 LTS (Bionic Beaver)  |:heavy_check_mark:
+Ubuntu 20.04 LTS (Focal Fossa)    |:heavy_check_mark:
+Debian 9 (Stretch)                |:heavy_check_mark:
+Debian 10 (Buster)	              |:heavy_check_mark:
 
 Official Repo 
 -------------
